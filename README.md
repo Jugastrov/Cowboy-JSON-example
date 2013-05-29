@@ -1,8 +1,9 @@
-Cowboy echo_post с JSON. 
+Cowboy echo_post Hello World with JSON. 
 -------
-(Подразумевается, что уже установлены erlang и rebar)
 
-Делаем так:
+To compile this example you need rebar in your PATH.
+
+Type the following command:
 
 ```
 $ rebar get-deps compile
@@ -12,8 +13,14 @@ $ ./start.sh
 $ ./curl_post.sh STRING_TO_ECHO
 ```
 
-Пример
+Example
 -------
+Terminal 1:
+```
+./start.sh
+1> Run ./curl_post.sh STRING_TO_ECHO 
+```
+Terminal 2:
 ```
 $ ./curl_post.sh hello
 HTTP/1.1 200 OK
@@ -24,4 +31,11 @@ content-length: 17
 content-encoding: utf-8`
 
 {"reply":"hello"}
+
 ```
+Terminal 1:
+```
+JSON Body: <<"{\"echo\":\"hello\"}">>
+List: [{<<"echo">>,<<"hello">>}]
+Echo: <<"hello">>
+JSON Reply: <<"{\"reply\":\"hello\"}">>
